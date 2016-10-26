@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Geo": "1.0.0-*",
+    "NETStandard.Library": "1.6.0",
+    "RavenDB.Client": "3.5.0-rc-35173"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}

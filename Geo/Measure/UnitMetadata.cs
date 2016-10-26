@@ -42,7 +42,7 @@ namespace Geo.Measure
             {
                 var name = Enum.GetName(type, unit);
 
-                var attr = type.GetField(name)
+                var attr = type.GetTypeInfo().GetField(name)
                     .GetCustomAttributes(typeof(UnitAttribute), false)
                     .Cast<UnitAttribute>()
                     .FirstOrDefault();

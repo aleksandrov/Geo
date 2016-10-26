@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using Geo.Abstractions.Interfaces;
 using Raven.Imports.Newtonsoft.Json;
 
@@ -50,7 +51,7 @@ namespace Geo.Raven.Json
 
         public override bool CanConvert(Type objectType)
         {
-            return typeof(Coordinate).IsAssignableFrom(objectType);
+            return typeof(Coordinate).GetTypeInfo().IsAssignableFrom(objectType);
         }
     }
 }

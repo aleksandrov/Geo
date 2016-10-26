@@ -7,7 +7,7 @@ namespace Geo.Raven.Json
 {
     public class GeoContractResolver : DefaultContractResolver
     {
-        private readonly Assembly _assembly = typeof(Coordinate).Assembly;
+        private readonly Assembly _assembly = typeof(Coordinate).GetTypeInfo().Assembly;
 
         protected override JsonProperty CreateProperty(MemberInfo member, global::Raven.Imports.Newtonsoft.Json.MemberSerialization memberSerialization)
         {
@@ -15,7 +15,7 @@ namespace Geo.Raven.Json
 
             if(member.DeclaringType != null)
             {
-                if (member.DeclaringType.Assembly == _assembly)
+                if (member.DeclaringType.GetTypeInfo().Assembly == _assembly)
                 {
                     if (!prop.Writable)
                     {
